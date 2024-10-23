@@ -8,9 +8,9 @@ public class Calculadora{
         boolean comprobar = false;
  
         do{
-            //Verificación de los datos puestos por el usuario del número 1.
-            /* Con matches, hay una condición de que dígitos primero puede
-            poner el usuario, en la condicional tenemos primero que solo se admite los caracteres '+' y '-', pero con la condición de que sea una sola vez o ninguna vez. Después tenemos que se admiten cualquier número del 0 al 9 y que se ponga o 0 veces o más veces, es decir, se pone algo o no se pone nada. Mas otra condición de que solo admite el carácter '.' una o ninguna vez. Seguido del punto, si es que se coloca, se admite cualquier número del 0 al 9 que sea una o más veces.*/
+            //Verification of the data entered by user number one.
+            /* With matches, there are one condition that the digits can be put by the user, 
+			in the conditional we have the first than only accept the characters '+' and '-', but with the condition that can be only one time or never. After we only admit the number 0 to 9 and put 0 one time or many times, in fact, put something or put nothing. Another condition that only accept the character '.' once or never. next the pont, if put, it's admit whatever number 0 or 9 once or many times.*/
             String numero1;
             do {
                 System.out.println("\n Por favor, dame el primer número de la operación. ");
@@ -18,7 +18,7 @@ public class Calculadora{
             } while (!numero1.matches("[+-]?[\\d]*[.]?[\\d]+"));
             double nume1 = Double.parseDouble(numero1);
             double n1 = new Double(numero1);
-            // Fin de la verificación de los datos puestos por el usuario del número 1.
+            // End of the verification of data entered by the user number 1.
  
             do {
                 System.out.println("\n ¿Que operación desea hacer? (Solo coloque un signo)");
@@ -33,7 +33,7 @@ public class Calculadora{
                 }else { comprobar = false; }
             } while (comprobar != true);
  
-            // Verificación de los datos puestos por el usuario del número 2.
+            // Verification of data entered by the user number 2.
             String numero2;
             do {
                 System.out.println("\n Por favor, dame el segundo número.");
@@ -41,7 +41,7 @@ public class Calculadora{
             } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
             double nume2 = Double.parseDouble(numero2);
             double n2 = new Double(numero2);
-            // Fin de la verificación de los datos puestos por el usuario del número 2.
+            // End of the verification of data entered by the user number 2.
  
             do{
                 comprobar = true;
@@ -57,7 +57,7 @@ public class Calculadora{
                         res = n1 * n2;
                         break;
                     case "/":
-                        /* Por tal de evitar errores y añadir números complejos, si el usuario coloca 0 como segundo número, se piensa entonces que el denominador es 0, y por ello añado una condicional que lo verifique, y para hacer el codigo mas dinamico y no solo añadir un 1, le vuelvo a preguntar al usuario que añada un número distinto, podría volver a colocar 0, y es la razón por la que se encuentra en un ciclo, así que mientras n2 sea 0, el código seguirá ejecutando hasta que ponga otro. */
+                        /* For avoid errors or complex numbers, if the user put 0 as second number, it's asume denominator is 0, and because of that I put one conditional to verify it, to make the code more dynamic and not only add a 1, I ask again to the use that enter another number, the user can put again 0, thats the razon of the loop in the code, while n2 be 0, the code will be continue asking for another number. */
                         while(n2 == 0){
                                  do {
                                     System.err.println(" En el denominador se encuentra \n"
