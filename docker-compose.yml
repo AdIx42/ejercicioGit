@@ -1,0 +1,14 @@
+version: '1'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+  db:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
